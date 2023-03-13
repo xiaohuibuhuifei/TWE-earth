@@ -1,0 +1,23 @@
+{
+  "name": "@xiaohuibuhuifei/twe-earth",
+  "version": "0.0.1",
+  "author": "xiaohui",
+  "license": "MIT",
+  "description": "earth jslib",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "test": ""
+  },
+  "devDependencies": {
+    "rollup": "^3.19.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaohuibuhuifei/TWE-earth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xiaohuibuhuifei/TWE-earth/issues"
+  },
+  "homepage": "https://github.com/xiaohuibuhuifei/TWE-earth#readme"
+}
