@@ -7,9 +7,16 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "test": ""
+    "buildumd": "rollup -c build/rollup.config.js",
+    "build": "npm run buildumd"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.0",
     "rollup": "^3.19.1"
   },
   "repository": {
@@ -19,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/xiaohuibuhuifei/TWE-earth/issues"
   },
-  "homepage": "https://github.com/xiaohuibuhuifei/TWE-earth#readme"
+  "homepage": "https://github.com/xiaohuibuhuifei/TWE-earth#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
