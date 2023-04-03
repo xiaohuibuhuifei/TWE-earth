@@ -8,4 +8,5 @@ export default {
   initEarth,
   flyTo,
   Entity,
+  zhes: 123,
 };
