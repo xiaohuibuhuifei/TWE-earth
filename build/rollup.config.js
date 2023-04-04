@@ -16,11 +16,11 @@ export default {
       file: outputPath + "twearth.esm.js",
       format: "es",
     },
-    {
-      name: "twearth",
-      file: outputPath + "twearth.aio.js",
-      format: "umd",
-    },
+    // {
+    //   name: "twearth",
+    //   file: outputPath + "twearth.aio.js",
+    //   format: "umd",
+    // },
     {
       name: "twearth",
       file: outputPath + "twearth.min.js",
@@ -28,10 +28,5 @@ export default {
       plugins: [terser()],
     },
   ],
-  plugins: [
-    json(),
-    commonjs(),
-    nodeResolve(),
-    babel({ babelHelpers: "bundled" }),
-  ],
+  plugins: [json(), commonjs(), nodeResolve(), babel({ babelHelpers: "bundled" })],
 };

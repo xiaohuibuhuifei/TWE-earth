@@ -1,14 +1,26 @@
 {
   "name": "@xiaohuibuhuifei/twe-earth",
-  "version": "0.0.1",
-  "author": "xiaohui",
+  "author": "Yahui Zhao",
+  "version": "Version 0.0.1",
+  "blog": "https://blog.csdn.net/u010358183",
+  "organization": "Zhongchuangzhiwei Technology Co., LTD",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaohuibuhuifei/TWE-earth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xiaohuibuhuifei/TWE-earth/issues"
+  },
+  "homepage": "https://github.com/xiaohuibuhuifei/TWE-earth#readme",
   "license": "MIT",
   "description": "earth jslib",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "buildumd": "rollup -c build/rollup.config.js",
-    "build": "npm run buildumd"
+    "build": "rollup -c build/rollup.config.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
@@ -18,16 +30,5 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.0",
     "rollup": "^3.19.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xiaohuibuhuifei/TWE-earth.git"
-  },
-  "bugs": {
-    "url": "https://github.com/xiaohuibuhuifei/TWE-earth/issues"
-  },
-  "homepage": "https://github.com/xiaohuibuhuifei/TWE-earth#readme",
-  "dependencies": {
-    "lodash": "^4.17.21"
   }
 }

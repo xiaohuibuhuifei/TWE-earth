@@ -1,12 +1,16 @@
-import { initEarth, flyTo } from "./core";
-import Entity from "./entity";
-import { author, version } from "../package.json";
+/**
+ * 主入口
+ * @description twEarth主入口
+ */
+import { author, version, organization, blog } from "../package.json";
+import { initEarth } from "./Kernel";
+import Inspect from "./Inspect";
 
 export default {
-  author: author,
-  version: version,
-  initEarth,
-  flyTo,
-  Entity,
-  zhes: 123,
+  author,
+  version,
+  organization,
+  blog,
+  initEarth, // 初始化地球
+  Inspect, // 检查类
 };
