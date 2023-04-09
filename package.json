@@ -14,10 +14,10 @@
   "homepage": "https://github.com/xiaohuibuhuifei/TWE-earth#readme",
   "license": "MIT",
   "description": "earth jslib",
-  "main": "dist/index.js",
+  "main": "build/index.js",
   "type": "module",
   "scripts": {
-    "build": "rollup -c build/rollup.config.js"
+    "build": "rollup -c rollup.config.js"
   },
   "dependencies": {
     "lodash": "^4.17.21"
