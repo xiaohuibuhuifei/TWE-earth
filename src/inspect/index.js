@@ -45,7 +45,7 @@ Check.checkViewer = (viewer) => {
 };
 
 /**
- *
+ * 检查是否为空
  * @param {String} value 要判断的值
  * @param {String} message 报错信息
  */
