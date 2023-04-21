@@ -1,4 +1,5 @@
 import Inspect from "../Inspect";
+import { FlagMaterialProperty } from "../Materials/FlagMaterialProperty";
 
 /**
  * 核心类
@@ -19,8 +20,20 @@ export const initEarth = (el) => {
     timeline: false, // 时间线小部件
     navigationHelpButton: false, // 帮助按钮
     navigationInstructionsInitiallyVisible: false,
+    contextOptions: {
+      requestWebgl1: true,
+    },
   });
   // 去除logo
   viewer.cesiumWidget.creditContainer.style.display = "none";
   return viewer;
+};
+
+export const putRectangle = () => {
+  viewer.entities.add({
+    rectangle: {
+      coordinates: Cesium.Rectangle.fromDegrees(105, 32, 110, 35),
+      material: new FlagMaterialProperty(),
+    },
+  });
 };

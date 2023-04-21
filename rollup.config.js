@@ -2,6 +2,7 @@ import { babel } from "@rollup/plugin-babel";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
+import image from "@rollup/plugin-image";
 // terser 代码压缩
 import terser from "@rollup/plugin-terser";
 
@@ -27,5 +28,5 @@ export default {
       plugins: [terser()],
     },
   ],
-  plugins: [json(), commonjs(), nodeResolve(), babel({ babelHelpers: "bundled" })],
+  plugins: [json(), image(), commonjs(), nodeResolve(), babel({ babelHelpers: "bundled" })],
 };

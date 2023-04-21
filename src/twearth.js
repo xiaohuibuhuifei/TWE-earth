@@ -3,7 +3,7 @@
  * @description twEarth主入口
  */
 import { author, version, organization, blog } from "../package.json";
-import { initEarth } from "./Kernel";
+import { initEarth, putRectangle } from "./Kernel";
 import Inspect from "./Inspect";
 
 export default {
@@ -12,5 +12,6 @@ export default {
   organization,
   blog,
   initEarth, // 初始化地球
+  putRectangle,
   Inspect, // 检查类
 };
