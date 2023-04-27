@@ -32,7 +32,7 @@ export const initEarth = (el) => {
 export const putRectangle = () => {
   viewer.entities.add({
     rectangle: {
-      coordinates: Cesium.Rectangle.fromDegrees(105, 32, 110, 35),
+      coordinates: Cesium.Rectangle.fromDegrees(105, 32, 109, 35),
       material: new FlagMaterialProperty(),
     },
   });

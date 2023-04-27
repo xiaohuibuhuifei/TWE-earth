@@ -1,4 +1,7 @@
 import logo from "../Assets/images/logo.png";
+import ss from "../Assets/images/s.png";
+import tt from "../Assets/images/t.png";
+import flow from "../Assets/images/flow.png";
 
 /**
  * 图片材质
@@ -38,7 +41,11 @@ Cesium.Material.FlagMaterialSource = `
   {
     czm_material material = czm_getDefaultMaterial(materialInput);
     vec2 muv = materialInput.st;
-    vec4 imageColor = texture(uImage, vec2(fract(muv.x + time), fract(muv.y + time)));
+    // material.diffuse = texture(uImage, materialInput.st).rgb;
+    // vec2 center = vec2(0.2, 0.2);
+    // float dis = distance(center, materialInput.st);
+    // material.alpha=mod(materialInput.st.s,1.0);
+    vec4 imageColor = texture(uImage, vec2(fract(muv.y + time), fract(muv.x + time)));
     material.diffuse = vec3(imageColor.rgb);
     return material;
   }
@@ -47,8 +54,10 @@ Cesium.Material._materialCache.addMaterial(Cesium.Material.FlagMaterialType, {
   fabric: {
     type: Cesium.Material.FlagMaterialType,
     uniforms: {
-      uImage: logo,
-      time: 0,
+      uImage: flow,
+      sImage: ss,
+      tImage: tt,
+      time: 0.1,
     },
     source: Cesium.Material.FlagMaterialSource,
   },
