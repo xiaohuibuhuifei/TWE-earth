@@ -36,17 +36,32 @@ class FlagMaterialProperty {
 Cesium.FlagMaterialProperty = FlagMaterialProperty;
 Cesium.Material.FlagMaterialProperty = "FlagMaterialProperty";
 Cesium.Material.FlagMaterialType = "FlagMaterialType";
+// Cesium.Material.FlagMaterialSource = `
+//   czm_material czm_getMaterial(czm_materialInput materialInput)
+//   {
+//     czm_material material = czm_getDefaultMaterial(materialInput);
+//     vec2 muv = materialInput.st;
+//     // material.diffuse = texture(uImage, materialInput.st).rgb;
+//     // vec2 center = vec2(0.2, 0.2);
+//     // float dis = distance(center, materialInput.st);
+//     // material.alpha=mod(materialInput.st.s,1.0);
+//     vec4 imageColor = texture(uImage, vec2(fract(muv.y + time), fract(muv.x + time)));
+//     material.diffuse = vec3(imageColor.rgb);
+//     return material;
+//   }
+//   `;
 Cesium.Material.FlagMaterialSource = `
   czm_material czm_getMaterial(czm_materialInput materialInput)
   {
     czm_material material = czm_getDefaultMaterial(materialInput);
-    vec2 muv = materialInput.st;
-    // material.diffuse = texture(uImage, materialInput.st).rgb;
-    // vec2 center = vec2(0.2, 0.2);
-    // float dis = distance(center, materialInput.st);
-    // material.alpha=mod(materialInput.st.s,1.0);
-    vec4 imageColor = texture(uImage, vec2(fract(muv.y + time), fract(muv.x + time)));
-    material.diffuse = vec3(imageColor.rgb);
+    vec2 st = materialInput.st;
+    vec4 colorImage = texture(image, vec2(fract(st.t - time), st.t));
+    vec4 fragColor;
+    fragColor.rgb = color.rgb / 1.0;
+    fragColor = czm_gammaCorrect(fragColor);
+    material.alpha = colorImage.a * color.a;
+    material.diffuse = color.rgb;
+    material.emission = fragColor.rgb;
     return material;
   }
   `;
@@ -54,10 +69,9 @@ Cesium.Material._materialCache.addMaterial(Cesium.Material.FlagMaterialType, {
   fabric: {
     type: Cesium.Material.FlagMaterialType,
     uniforms: {
-      uImage: flow,
-      sImage: ss,
-      tImage: tt,
-      time: 0.1,
+      color: new Cesium.Color(1.0, 0.0, 0.0, 0.5),
+      image: flow,
+      time: 0
     },
     source: Cesium.Material.FlagMaterialSource,
   },

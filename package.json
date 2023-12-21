@@ -1,7 +1,7 @@
 {
-  "name": "@xiaohuibuhuifei/twe-earth",
-  "author": "Yahui Zhao",
-  "version": "Version 0.0.1",
+  "name": "twearth",
+  "author": "xiaohui",
+  "version": "0.0.3",
   "blog": "https://blog.csdn.net/u010358183",
   "organization": "Zhongchuangzhiwei Technology Co., LTD",
   "repository": {
@@ -14,7 +14,7 @@
   "homepage": "https://github.com/xiaohuibuhuifei/TWE-earth#readme",
   "license": "MIT",
   "description": "earth jslib",
-  "main": "build/index.js",
+  "main": "build/twearth.min.js",
   "type": "module",
   "scripts": {
     "build": "rollup -c rollup.config.js"

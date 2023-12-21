@@ -37,3 +37,26 @@ export const putRectangle = () => {
     },
   });
 };
+
+export const putWall = () => {
+  // 定义墙面的起点和终点坐标
+  var startPoint = Cesium.Cartesian3.fromDegrees(-75.1704, 39.9319);
+  var endPoint = Cesium.Cartesian3.fromDegrees(-78.1692, 39.9314);
+
+  // 定义墙面的高度
+  var height = 100000;
+
+  // 定义墙面的顶点数组
+  var positions = [startPoint, endPoint];
+
+  // 创建墙面实体
+  var wallEntity = viewer.entities.add({
+    name: "Wall",
+    wall: {
+      positions: positions,
+      maximumHeights: [height, height],
+      minimumHeights: [0, 0],
+      material: new FlagMaterialProperty(),
+    },
+  });
+};
